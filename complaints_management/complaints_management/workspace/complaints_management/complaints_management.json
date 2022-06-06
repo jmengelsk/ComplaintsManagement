@@ -1,0 +1,38 @@
+{
+ "category": "Domains",
+ "charts": [],
+ "creation": "2022-03-30 10:17:59.260512",
+ "developer_mode_only": 0,
+ "disable_user_customization": 0,
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "extends_another_page": 0,
+ "hide_custom": 0,
+ "idx": 0,
+ "is_default": 0,
+ "is_standard": 1,
+ "label": "Complaints Management",
+ "links": [],
+ "modified": "2022-03-30 11:37:06.520009",
+ "modified_by": "Administrator",
+ "module": "Complaints Management",
+ "name": "Complaints Management",
+ "owner": "Administrator",
+ "pin_to_bottom": 0,
+ "pin_to_top": 0,
+ "shortcuts": [
+  {
+   "doc_view": "List",
+   "label": "Complaint",
+   "link_to": "Complaint",
+   "type": "DocType"
+  },
+  {
+   "doc_view": "List",
+   "label": "Email",
+   "link_to": "Communication",
+   "type": "DocType"
+  }
+ ],
+ "shortcuts_label": "Complaint"
+}

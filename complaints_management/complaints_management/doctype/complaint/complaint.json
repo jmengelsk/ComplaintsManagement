@@ -1,0 +1,799 @@
+{
+ "actions": [],
+ "allow_events_in_timeline": 1,
+ "allow_import": 1,
+ "allow_rename": 1,
+ "autoname": "CPL.YY.MM.####",
+ "creation": "2022-03-28 08:22:29.325592",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "complaint_header",
+  "date",
+  "customer",
+  "customer_name",
+  "header_cb1",
+  "complaint_status",
+  "item_kind_nr",
+  "header_sb",
+  "initial_respond",
+  "working_on",
+  "deadline",
+  "duration",
+  "column_break_7",
+  "approval_date",
+  "approval_by",
+  "final_status",
+  "cn_amout",
+  "factories_sb",
+  "fact_ks",
+  "fact_wh",
+  "factories_cb1",
+  "fact_shipping",
+  "factories_cb2",
+  "fact_b1",
+  "fact_b2",
+  "factories_cb3",
+  "fact_b3",
+  "fact_b4",
+  "item1_sb",
+  "item1_code",
+  "item1_name_en",
+  "item1_complaint_en",
+  "item1_rootcause_en",
+  "item1_cb",
+  "item1_amount",
+  "item1_name_de",
+  "item1_complaint_de",
+  "item1_rootcause_de",
+  "item2_sb",
+  "item2_code",
+  "item2_name_en",
+  "item2_complaint_en",
+  "item2_rootcause_en",
+  "item2_actions_en",
+  "item2_cb",
+  "item2_amount",
+  "item2_name_de",
+  "item2_complaint_de",
+  "item2_rootcause_de",
+  "item2_actions_de",
+  "item3_sb",
+  "item3_code",
+  "item3_name_en",
+  "item3_complaint_en",
+  "item3_rootcause_en",
+  "item3_actions_en",
+  "item3_cb",
+  "item3_amount",
+  "item3_name_de",
+  "item3_complaint_de",
+  "item3_rootcause_de",
+  "item3_actions_de",
+  "item4_sb",
+  "item4_code",
+  "item4_name_en",
+  "item4_complaint_en",
+  "item4_rootcause_en",
+  "item4_actions_en",
+  "item4_cb",
+  "item4_amount",
+  "item4_name_de",
+  "item4_complaint_de",
+  "item4_rootcause_de",
+  "item4_actions_de",
+  "item5_sb",
+  "item5_code",
+  "item5_name_en",
+  "item5_complaint_en",
+  "item5_rootcause_en",
+  "item5_actions_en",
+  "item5_cb",
+  "item5_amount",
+  "item5_name_de",
+  "item5_complaint_de",
+  "item5_rootcause_de",
+  "item5_actions_de",
+  "item6_sb",
+  "item6_code",
+  "item6_name_en",
+  "item6_rootcause_en",
+  "item6_complaint_en",
+  "item6_actions_en",
+  "item6_cb",
+  "item6_amount",
+  "item6_name_de",
+  "item6_complaint_de",
+  "item6_rootcause_de",
+  "item6_actions_de",
+  "actions_sb",
+  "item1_actions_en",
+  "actions_cb",
+  "item1_actions_de",
+  "blank"
+ ],
+ "fields": [
+  {
+   "allow_in_quick_entry": 1,
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Complaint Date",
+   "reqd": 1,
+   "width": "10"
+  },
+  {
+   "allow_in_quick_entry": 1,
+   "bold": 1,
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "in_global_search": 1,
+   "in_list_view": 1,
+   "label": "Customer",
+   "options": "Customer",
+   "reqd": 1,
+   "search_index": 1
+  },
+  {
+   "bold": 1,
+   "collapsible": 1,
+   "fieldname": "item1_sb",
+   "fieldtype": "Section Break",
+   "label": "Product 1"
+  },
+  {
+   "fieldname": "item1_code",
+   "fieldtype": "Link",
+   "label": "(1) Code",
+   "options": "GC Product",
+   "reqd": 1
+  },
+  {
+   "depends_on": "eval:doc.item1_code!==''",
+   "fieldname": "item1_name_en",
+   "fieldtype": "Data",
+   "label": "(1) Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "item1_name_de",
+   "fieldtype": "Data",
+   "label": "(1) Bezeichnung"
+  },
+  {
+   "depends_on": "eval:doc.item1_name_en!==''",
+   "fieldname": "item1_complaint_en",
+   "fieldtype": "Link",
+   "label": "(1) Complaint",
+   "options": "Complaint Text",
+   "reqd": 1
+  },
+  {
+   "fieldname": "item1_complaint_de",
+   "fieldtype": "Data",
+   "label": "(1) Reklamation"
+  },
+  {
+   "depends_on": "eval:doc.item1_complaint_en!==''",
+   "fieldname": "item1_rootcause_en",
+   "fieldtype": "Link",
+   "label": "(1) Root Cause",
+   "options": "Root Cause",
+   "reqd": 1
+  },
+  {
+   "fieldname": "item1_rootcause_de",
+   "fieldtype": "Data",
+   "label": "(1) Ursache"
+  },
+  {
+   "fieldname": "item1_cb",
+   "fieldtype": "Column Break"
+  },
+  {
+   "allow_in_quick_entry": 1,
+   "fieldname": "complaint_status",
+   "fieldtype": "Select",
+   "in_global_search": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Status",
+   "length": 10,
+   "options": "Open\nClosed\nOn Hold",
+   "reqd": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "complaint_header",
+   "fieldtype": "Section Break",
+   "label": "Core Data"
+  },
+  {
+   "fieldname": "initial_respond",
+   "fieldtype": "Date",
+   "label": "Initial Respond"
+  },
+  {
+   "fieldname": "working_on",
+   "fieldtype": "Data",
+   "label": "Working on"
+  },
+  {
+   "fieldname": "approval_by",
+   "fieldtype": "Data",
+   "in_global_search": 1,
+   "label": "Approved by"
+  },
+  {
+   "fieldname": "approval_date",
+   "fieldtype": "Date",
+   "label": "Approval Date"
+  },
+  {
+   "fieldname": "final_status",
+   "fieldtype": "Select",
+   "label": "final Status",
+   "options": "\nApproved\nRejected"
+  },
+  {
+   "fieldname": "duration",
+   "fieldtype": "Data",
+   "label": "Duration"
+  },
+  {
+   "fieldname": "cn_amout",
+   "fieldtype": "Currency",
+   "label": "C/N Amount",
+   "precision": "2"
+  },
+  {
+   "fieldname": "deadline",
+   "fieldtype": "Date",
+   "label": "Deadline"
+  },
+  {
+   "fieldname": "column_break_7",
+   "fieldtype": "Column Break"
+  },
+  {
+   "bold": 1,
+   "collapsible": 1,
+   "fieldname": "factories_sb",
+   "fieldtype": "Section Break",
+   "label": "Factories"
+  },
+  {
+   "default": "0",
+   "fieldname": "fact_ks",
+   "fieldtype": "Check",
+   "label": "Khoshed"
+  },
+  {
+   "bold": 1,
+   "collapsible": 1,
+   "depends_on": "eval:doc.item_kind_nr>'1'",
+   "fieldname": "item2_sb",
+   "fieldtype": "Section Break",
+   "label": "Product 2"
+  },
+  {
+   "fieldname": "item2_code",
+   "fieldtype": "Link",
+   "label": "(2) Code",
+   "options": "GC Product"
+  },
+  {
+   "bold": 1,
+   "collapsible": 1,
+   "depends_on": "eval:doc.item_kind_nr>'2'",
+   "fieldname": "item3_sb",
+   "fieldtype": "Section Break",
+   "label": "Product 3"
+  },
+  {
+   "bold": 1,
+   "collapsible": 1,
+   "depends_on": "eval:doc.item_kind_nr>'3'",
+   "fieldname": "item4_sb",
+   "fieldtype": "Section Break",
+   "label": "Product 4"
+  },
+  {
+   "bold": 1,
+   "collapsible": 1,
+   "depends_on": "eval:doc.item_kind_nr>'4'",
+   "fieldname": "item5_sb",
+   "fieldtype": "Section Break",
+   "label": "Product 5"
+  },
+  {
+   "bold": 1,
+   "collapsible": 1,
+   "depends_on": "eval:doc.item_kind_nr>'5'",
+   "fieldname": "item6_sb",
+   "fieldtype": "Section Break",
+   "label": "Product 6"
+  },
+  {
+   "fieldname": "item3_code",
+   "fieldtype": "Link",
+   "label": "(3) Code",
+   "options": "GC Product"
+  },
+  {
+   "fieldname": "item4_code",
+   "fieldtype": "Link",
+   "label": "(4) Code",
+   "options": "GC Product"
+  },
+  {
+   "fieldname": "item5_code",
+   "fieldtype": "Link",
+   "label": "(5) Code",
+   "options": "GC Product"
+  },
+  {
+   "fieldname": "item6_code",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "(6) Code",
+   "options": "GC Product"
+  },
+  {
+   "depends_on": "eval:doc.item2_code!==''",
+   "fieldname": "item2_name_en",
+   "fieldtype": "Data",
+   "label": "(2) Name"
+  },
+  {
+   "depends_on": "eval:doc.item3_code!==''",
+   "fieldname": "item3_name_en",
+   "fieldtype": "Data",
+   "label": "(3) Name"
+  },
+  {
+   "depends_on": "eval:doc.item4_code!==''",
+   "fieldname": "item4_name_en",
+   "fieldtype": "Data",
+   "label": "(4) Name"
+  },
+  {
+   "depends_on": "eval:doc.item5_code!==''",
+   "fieldname": "item5_name_en",
+   "fieldtype": "Data",
+   "label": "(5) Name"
+  },
+  {
+   "depends_on": "eval:doc.item6_code!==''",
+   "fieldname": "item6_name_en",
+   "fieldtype": "Data",
+   "label": "(6) Name"
+  },
+  {
+   "depends_on": "eval:doc.item2_name_en!==''",
+   "fieldname": "item2_complaint_en",
+   "fieldtype": "Link",
+   "label": "(2) Complaint",
+   "options": "Complaint Text"
+  },
+  {
+   "depends_on": "eval:doc.item3_name_en!==''",
+   "fieldname": "item3_complaint_en",
+   "fieldtype": "Link",
+   "label": "(3) Complaint",
+   "options": "Complaint Text"
+  },
+  {
+   "depends_on": "eval:doc.item4_name_en!==''",
+   "fieldname": "item4_complaint_en",
+   "fieldtype": "Link",
+   "label": "(4) Complaint",
+   "options": "Complaint Text"
+  },
+  {
+   "depends_on": "eval:doc.item5_name_en!==''",
+   "fieldname": "item5_complaint_en",
+   "fieldtype": "Link",
+   "label": "(5) Complaint",
+   "options": "Complaint Text"
+  },
+  {
+   "depends_on": "eval:doc.item6_name_en!==''",
+   "fieldname": "item6_complaint_en",
+   "fieldtype": "Link",
+   "label": "(6) Complaint",
+   "options": "Complaint Text"
+  },
+  {
+   "depends_on": "eval:doc.item2_complaint_en!==''",
+   "fieldname": "item2_rootcause_en",
+   "fieldtype": "Link",
+   "label": "(2) Root Cause",
+   "options": "Root Cause"
+  },
+  {
+   "depends_on": "eval:doc.item3_complaint_en!==''",
+   "fieldname": "item3_rootcause_en",
+   "fieldtype": "Link",
+   "label": "(3) Root Cause",
+   "options": "Root Cause"
+  },
+  {
+   "depends_on": "eval:doc.item4_complaint_en!==''",
+   "fieldname": "item4_rootcause_en",
+   "fieldtype": "Link",
+   "label": "(4) Root Cause",
+   "options": "Root Cause"
+  },
+  {
+   "depends_on": "eval:doc.item5_complaint_en!==''",
+   "fieldname": "item5_rootcause_en",
+   "fieldtype": "Link",
+   "label": "(5) Root Cause",
+   "options": "Root Cause"
+  },
+  {
+   "depends_on": "eval:doc.item6_complaint_en!==''",
+   "fieldname": "item6_rootcause_en",
+   "fieldtype": "Link",
+   "label": "(6) Root Cause",
+   "options": "Root Cause"
+  },
+  {
+   "depends_on": "eval:doc.item2_rootcause_en!==''",
+   "fieldname": "item2_actions_en",
+   "fieldtype": "Text Editor",
+   "hidden": 1,
+   "label": "(2) Actions"
+  },
+  {
+   "depends_on": "eval:doc.item3_rootcause_en!==''",
+   "fieldname": "item3_actions_en",
+   "fieldtype": "Text Editor",
+   "hidden": 1,
+   "label": "(3) Actions"
+  },
+  {
+   "depends_on": "eval:doc.item4_rootcause_en!==''",
+   "fieldname": "item4_actions_en",
+   "fieldtype": "Text Editor",
+   "hidden": 1,
+   "label": "(4) Actions"
+  },
+  {
+   "depends_on": "eval:doc.item5_rootcause_en!==''",
+   "fieldname": "item5_actions_en",
+   "fieldtype": "Text Editor",
+   "hidden": 1,
+   "label": "(5) Actions"
+  },
+  {
+   "depends_on": "eval:doc.item6_rootcause_en!==''",
+   "fieldname": "item6_actions_en",
+   "fieldtype": "Text Editor",
+   "hidden": 1,
+   "label": "(6) Actions"
+  },
+  {
+   "fieldname": "item2_cb",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "item3_cb",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "item4_cb",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "item5_cb",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "item6_cb",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "item2_name_de",
+   "fieldtype": "Data",
+   "label": "(2) Bezeichnung"
+  },
+  {
+   "fieldname": "item3_name_de",
+   "fieldtype": "Data",
+   "label": "(3) Bezeichnung"
+  },
+  {
+   "fieldname": "item4_name_de",
+   "fieldtype": "Data",
+   "label": "(4) Bezeichnung"
+  },
+  {
+   "fieldname": "item5_name_de",
+   "fieldtype": "Data",
+   "label": "(5) Bezeichnung"
+  },
+  {
+   "fieldname": "item6_name_de",
+   "fieldtype": "Data",
+   "label": "(6) Bezeichnung"
+  },
+  {
+   "fieldname": "item2_complaint_de",
+   "fieldtype": "Data",
+   "label": "(2) Reklamation"
+  },
+  {
+   "depends_on": "eval:doc.item3_code!==''",
+   "fieldname": "item3_complaint_de",
+   "fieldtype": "Data",
+   "label": "(3) Reklamation"
+  },
+  {
+   "fieldname": "item4_complaint_de",
+   "fieldtype": "Data",
+   "label": "(4) Reklamation "
+  },
+  {
+   "fieldname": "item5_complaint_de",
+   "fieldtype": "Data",
+   "label": "(5) Reklamation"
+  },
+  {
+   "fieldname": "item6_complaint_de",
+   "fieldtype": "Data",
+   "label": "(6) Reklamation"
+  },
+  {
+   "fieldname": "item2_rootcause_de",
+   "fieldtype": "Data",
+   "label": "(2) Ursache"
+  },
+  {
+   "fieldname": "item3_rootcause_de",
+   "fieldtype": "Data",
+   "label": "(3) Ursache"
+  },
+  {
+   "fieldname": "item4_rootcause_de",
+   "fieldtype": "Data",
+   "label": "(4) Ursache"
+  },
+  {
+   "fieldname": "item5_rootcause_de",
+   "fieldtype": "Data",
+   "label": "(5) Ursache"
+  },
+  {
+   "fieldname": "item6_rootcause_de",
+   "fieldtype": "Data",
+   "label": "(6) Ursache"
+  },
+  {
+   "depends_on": "eval:doc.item2_rootcause_de!==''",
+   "fieldname": "item2_actions_de",
+   "fieldtype": "Text Editor",
+   "hidden": 1,
+   "label": "(2) Ma\u00dfnahmen"
+  },
+  {
+   "depends_on": "eval:doc.item3_rootcause_de!==''",
+   "fieldname": "item3_actions_de",
+   "fieldtype": "Text Editor",
+   "hidden": 1,
+   "label": "(3) Ma\u00dfnahmen"
+  },
+  {
+   "depends_on": "eval:doc.item4_rootcause_de!==''",
+   "fieldname": "item4_actions_de",
+   "fieldtype": "Text Editor",
+   "hidden": 1,
+   "label": "(4) Ma\u00dfnahmen"
+  },
+  {
+   "depends_on": "eval:doc.item5_rootcause_de!==''",
+   "fieldname": "item5_actions_de",
+   "fieldtype": "Text Editor",
+   "hidden": 1,
+   "label": "(5) Ma\u00dfnahmen "
+  },
+  {
+   "depends_on": "eval:doc.item6_rootcause_de!==''",
+   "fieldname": "item6_actions_de",
+   "fieldtype": "Text Editor",
+   "label": "(6) Ma\u00dfnahmen"
+  },
+  {
+   "default": "0",
+   "fieldname": "fact_wh",
+   "fieldtype": "Check",
+   "label": "Warehouse"
+  },
+  {
+   "default": "0",
+   "fieldname": "fact_shipping",
+   "fieldtype": "Check",
+   "label": "Shipping"
+  },
+  {
+   "default": "0",
+   "fieldname": "fact_b1",
+   "fieldtype": "Check",
+   "label": "Borg 1"
+  },
+  {
+   "default": "0",
+   "fieldname": "fact_b2",
+   "fieldtype": "Check",
+   "label": "Borg 2"
+  },
+  {
+   "default": "0",
+   "fieldname": "fact_b3",
+   "fieldtype": "Check",
+   "label": "Borg 3"
+  },
+  {
+   "default": "0",
+   "fieldname": "fact_b4",
+   "fieldtype": "Check",
+   "label": "Borg 4"
+  },
+  {
+   "depends_on": "eval:doc.item1_code!==''",
+   "fieldname": "item1_amount",
+   "fieldtype": "Int",
+   "label": "(1) Amount",
+   "mandatory_depends_on": "eval:doc.item2_code!==''"
+  },
+  {
+   "depends_on": "eval:doc.item2_code!==''",
+   "fieldname": "item2_amount",
+   "fieldtype": "Int",
+   "label": "(2) Amount"
+  },
+  {
+   "depends_on": "eval:doc.item3_code!==''",
+   "fieldname": "item3_amount",
+   "fieldtype": "Int",
+   "label": "(3) Amount"
+  },
+  {
+   "depends_on": "eval:doc.item4_code!==''",
+   "fieldname": "item4_amount",
+   "fieldtype": "Int",
+   "label": "(4) Amount"
+  },
+  {
+   "depends_on": "eval:doc.item5_code!==''",
+   "fieldname": "item5_amount",
+   "fieldtype": "Int",
+   "label": "(5) Amount"
+  },
+  {
+   "depends_on": "eval:doc.item6_code!==''",
+   "fieldname": "item6_amount",
+   "fieldtype": "Int",
+   "label": "(6) Amount"
+  },
+  {
+   "fieldname": "factories_cb1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "factories_cb2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "factories_cb3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "bold": 1,
+   "fetch_from": "customer.company_clearname",
+   "fieldname": "customer_name",
+   "fieldtype": "Read Only",
+   "in_global_search": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Customer Name",
+   "search_index": 1
+  },
+  {
+   "bold": 1,
+   "collapsible": 1,
+   "fieldname": "header_sb",
+   "fieldtype": "Section Break",
+   "label": "Progress"
+  },
+  {
+   "fieldname": "header_cb1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "1",
+   "fieldname": "item_kind_nr",
+   "fieldtype": "Select",
+   "label": "Nr. of different Products",
+   "options": "1\n2\n3\n4\n5\n6",
+   "reqd": 1
+  },
+  {
+   "fieldname": "actions_cb",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "actions_sb",
+   "fieldtype": "Section Break",
+   "label": "Actions"
+  },
+  {
+   "depends_on": "eval:doc.item1_rootcause_en!==''",
+   "fieldname": "item1_actions_en",
+   "fieldtype": "Text Editor",
+   "label": "Actions"
+  },
+  {
+   "depends_on": "eval:doc.item1_rootcause_de!==''",
+   "fieldname": "item1_actions_de",
+   "fieldtype": "Text Editor",
+   "label": "Ma\u00dfnahmen"
+  },
+  {
+   "fieldname": "blank",
+   "fieldtype": "Data",
+   "hidden": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2022-05-18 10:51:16.760676",
+ "modified_by": "Administrator",
+ "module": "Complaints Management",
+ "name": "Complaint",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Complaints Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Complaints User",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "search_fields": "customer_name",
+ "show_name_in_global_search": 1,
+ "sort_field": "date",
+ "sort_order": "DESC",
+ "track_changes": 1
+}
